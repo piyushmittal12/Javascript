@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+</head>
+<body>
+  <h2>To-Do List</h2>
+  <input class="input" type="text" placeholder="Enter your name">
+  <button onclick="AddToDo()">Submit</button>
+
+</br> </br>
+
+  <h2>Another To-Do List</h2>
+  <input class="Another-input" type="text" placeholder="Enter your name">
+  <button onclick="AddAnotherToDo()">Submit</button>
+  <div class="js-To-Do"></div>
+
+
+</body>
+<script>
+
+  let ToDoArray = [];
+
+  function AddToDo() {
+    inputEl = document.querySelector('.input');
+    Name = inputEl.value;
+    ToDoArray.push(Name);
+    console.log(ToDoArray);
+    inputEl.value = '';
+
+     for (let i = 0; i < ToDoArray.length; i++) {
+    const element = ToDoArray[i];
+    let newpara = document.createElement('p');
+    document.body.appendChild(newpara);
+    newpara.innerHTML = element;
+    console.log(newpara);
+
+  }  
+   
+  }
+
+
+   
+
+  
+
+
+
+  let toDoList = [];
+  renderToDo();
+
+  function renderToDo() {
+
+    let toDoListHTML = '';
+
+    for (let i = 0; i < toDoList.length; i++) {
+      const toDo = toDoList[i];
+      const html = `
+      <p>
+        ${toDo} 
+        <button onclick="
+        toDoList.splice(${i}, 1);
+        renderToDo();
+        ">Delete</button> 
+        </p>`;
+      toDoListHTML += html;
+      
+    }
+    console.log(toDoListHTML);
+    document.querySelector('.js-To-Do').innerHTML = toDoListHTML;
+
+  }
+  
+
+  function AddAnotherToDo() {
+    let AnotherInput = document.querySelector('.Another-input');
+    let newName = AnotherInput.value;
+
+    toDoList.push(newName);
+    console.log(toDoList);
+
+    AnotherInput.value = '';
+    renderToDo();
+    
+  }
+
+
+
+  
+
+</script>
+</html>
