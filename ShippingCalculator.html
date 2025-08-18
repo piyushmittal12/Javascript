@@ -33,4 +33,40 @@
     }
   }
 </script>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Calculator</title>
+</head>
+<body>
+
+  <h2>Shipping Calculator</h2>
+  <p>Orders under 40rs Adds 10rs Shipping</p>
+  <p>Orders over 40rs = Free Shipping</p>
+
+  <div class="input-container">
+    <input class="input" type="number">
+    <button onclick="Calculate()">Calculate</button>
+  </div>
+  <p>0 Rs</p>
+
+</body>
+<script>  
+
+  function Calculate(){
+
+  let inputEl = document.querySelector('.input');
+  let InputValue = Number(inputEl.value);
+
+    if (InputValue < 40) {
+      InputValue += 10;
+      console.log(InputValue);
+    } else {
+      console.log(InputValue);
+    }
+  }
+</script>
 </html>

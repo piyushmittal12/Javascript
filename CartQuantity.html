@@ -45,4 +45,51 @@
 
   
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
+  <title>Cart Prototype</title>
+</head>
+<body>
+  <h2>Cart Quantity</h2>
+  <div class="buttons-container">
+    <button onclick="ShowQuantity()">Show Quantity</button>
+    <button onclick="AddtoCart()">Add to Cart</button>
+    <button onclick="PlusTwo()">+2</button>
+    <button onclick="PlusThree()">+3</button>
+    <button onclick="ResetCart()">Reset Cart</button>
+  </div>
+</body>
+<script>
+  let cart = 0;
+
+  function ShowQuantity() {
+    console.log(`Cart Quantity is: ${cart}`);
+  }
+
+  function AddtoCart() {
+    cart += 1;
+    console.log(`Cart Quantity is: ${cart}`);
+  } 
+  
+  function PlusTwo() {
+    cart += 2;
+    console.log(`Cart Quantity is: ${cart}`);
+  }  
+
+  function PlusThree() {
+    cart += 3;
+    console.log(`Cart Quantity is: ${cart}`);
+  }
+  
+  function ResetCart() {
+    cart = 0;
+    console.log(`Cart Quantity is: ${cart}`);
+  }  
+
+  
+</script>
 </html>

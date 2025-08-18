@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add To Cart</title>
+</head>
+<body>
+
+  <button class="AddToCart">Add To Cart</button>
+  <p class="AddedMessage"></p>
+  
+</body>
+<script>
+
+let AddToCartBtn = document.querySelector('.AddToCart');
+let AddedMessage = document.querySelector('.AddedMessage');
+
+AddToCartBtn.addEventListener("click", ()=> {
+  AddedMessage.innerHTML = 'Added'
+
+  setTimeout(()=>{
+    AddedMessage.innerHTML= '';
+  }, 2000)
+})
+
+</script>
+</html>
